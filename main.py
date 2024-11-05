@@ -4,7 +4,7 @@ import argparse
 from torch.backends import cudnn
 from utils.utils import *
 
-from solver import Solver0
+from solver import Solver
 
 
 def str2bool(v):
@@ -32,15 +32,15 @@ if __name__ == '__main__':
     parser.add_argument('--num_epochs', type=int, default=10)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--win_size', type=int, default=100)
-    parser.add_argument('--input_c', type=int, default=55)
-    parser.add_argument('--output_c', type=int, default=55)
-    parser.add_argument('--batch_size', type=int, default=1024)
-    parser.add_argument('--pretrained_model', type=str, default=None)
-    parser.add_argument('--dataset', type=str, default='MSL')
+    parser.add_argument('--input_c', type=int, default=25)
+    parser.add_argument('--output_c', type=int, default=25)
+    parser.add_argument('--batch_size', type=int, default=256)
+    parser.add_argument('--pretrained_model', type=str, default=20)
+    parser.add_argument('--dataset', type=str, default='PSM')
     parser.add_argument('--mode', type=str, default='test', choices=['train', 'test'])
-    parser.add_argument('--data_path', type=str, default='./dataset/MSL')
+    parser.add_argument('--data_path', type=str, default='/ceph/home/student.aau.dk/na50kh/Anomaly_Detection/Anomaly_Transformer2/Anomaly-Transformer/dataset/PSM')
     parser.add_argument('--model_save_path', type=str, default='checkpoints')
-    parser.add_argument('--anormly_ratio', type=float, default=4.00)
+    parser.add_argument('--anormly_ratio', type=float, default=1)
 
     config = parser.parse_args()
 
